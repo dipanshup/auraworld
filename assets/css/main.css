@@ -386,7 +386,7 @@ a {
     letter-spacing: 0.1em;
     text-transform: uppercase;
     margin-bottom: 16px;
-    text-align: center;
+    text-align: left;
     opacity: 0;
     transform: translateY(30px);
     animation: fadeInUp 1.2s ease-out 0.5s forwards;
@@ -521,6 +521,7 @@ a {
     letter-spacing: -0.02em;
     line-height: 1;
     margin: 0;
+    text-align: center;
     opacity: 0;
     transform: translateY(40px);
     animation: fadeInUp 1s ease-out 0.3s forwards;
@@ -655,12 +656,14 @@ a {
 
 .leadership-overlay {
     position: absolute;
-    bottom: 30px;
-    left: 30px;
-    background: rgba(0, 0, 0, 0.8);
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
     color: white;
-    padding: 20px;
-    border-radius: 4px;
+    padding: 40px 30px 30px 30px;
+    border-radius: 0;
+    z-index: 3;
 }
 
 .leadership-bio h5 {
@@ -1435,5 +1438,46 @@ a {
     .footer-content {
         grid-template-columns: 1fr;
         gap: 32px;
+    }
+
+    .leadership-message {
+        grid-template-columns: 1fr;
+        gap: 0;
+        min-height: auto;
+    }
+
+    .message-text {
+        padding: 32px 24px;
+        order: 2;
+    }
+
+    .leadership-image {
+        min-height: 250px;
+        order: 1;
+    }
+
+    .leadership-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+        padding: 30px 20px 20px 20px;
+        border-radius: 0;
+        z-index: 3;
+    }
+
+    .leadership-bio {
+        text-align: center;
+    }
+
+    .message-text blockquote {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    .signature {
+        margin-top: 24px;
+        text-align: center;
     }
 }
